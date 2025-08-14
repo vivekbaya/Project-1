@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .cart-section {
+    width: 65%;
+  }
+  
+  .progress-bar {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar .active {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .delivery-check {
+    background: #ffe8e8;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .delivery-check button {
+    background-color: #ff5c8d;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .offers {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .item-section {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #eee;
+  }
+  
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .item-actions button {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    color: #ff5c8d;
+    cursor: pointer;
+  }
+  
+  .item-card {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .item-card img {
+    width: 100px;
+    height: 140px;
+    object-fit: cover;
+  }
+  
+  .item-details {
+    margin-left: 15px;
+    flex-grow: 1;
+  }
+  
+  .item-options {
+    margin: 10px 0;
+  }
+  
+  .item-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .final-price {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .original-price {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  .discount {
+    color: green;
+  }
+  
+  .remove-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+  }
+  
+  .add-more-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background: none;
+    border: 2px dashed #ddd;
+    cursor: pointer;
+  }
+  
+  .summary-section {
+    width: 30%;
+  }
+  
+  .coupon-section, .donate-section, .price-details {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .coupon-section input {
+    width: 60%;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .coupon-section button {
+    background-color: #ff5c8d;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  
+  .donate-options button {
+    margin: 5px 5px 0 0;
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .price-row, .total-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  
+  .total-row {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .free {
+    color: green;
+  }
+  
+  .place-order-btn {
+    width: 100%;
+    background-color: #ff5c8d;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

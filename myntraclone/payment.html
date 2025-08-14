@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Payment</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 60px;
+    }
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      display: inline-block;
+      padding: 30px;
+      max-width: 400px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      width: 90%;
+    }
+    button {
+      padding: 12px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Payment </h2>
+    <p>Enter card details to simulate a payment</p>
+    <input type="text" placeholder="Card Number (e.g. 4111 1111 1111 1111)" required /><br />
+    <input type="text" placeholder="Cardholder Name" required /><br />
+    <input type="text" placeholder="Expiry (MM/YY)" required /><br />
+    <input type="password" placeholder="CVV" required /><br />
+    <button id="payNowBtn" onclick="simulatePayment()">Pay ₹0</button>
+  </div>
+
+  <script>
+    const payBtn = document.getElementById("payNowBtn");
+    const total = localStorage.getItem("totalAmount");
+    payBtn.innerText = `Pay ₹${total || 0}`;
+  
+    function simulatePayment() {
+      alert("Processing Payment...");
+  
+      setTimeout(() => {
+        const bagItems = JSON.parse(localStorage.getItem("bagItems")) || [];
+        const allItems = JSON.parse(localStorage.getItem("items")) || [];
+  
+        const items = bagItems.map(id => {
+          const item = allItems.find(item => item.id === id);
+          if (!item) console.warn(`Missing item for ID: ${id}`);
+          return item;
+        }).filter(Boolean); // remove any nulls
+  
+        const totalAmount = parseFloat(localStorage.getItem("totalAmount")) || 0;
+  
+        const newOrder = {
+          date: new Date().toLocaleString(),
+          items: items,
+          totalAmount: totalAmount
+        };
+  
+        const history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+        history.push(newOrder);
+        localStorage.setItem("orderHistory", JSON.stringify(history));
+  
+        localStorage.removeItem("bagItems");
+  
+        window.location.href = "order-success.html";
+      }, 1500);
+    }
+  </script>
+  
+
+</body>
+</html>

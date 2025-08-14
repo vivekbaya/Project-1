@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Address Form</title>
+  <link rel="stylesheet" href="order-confirmation.css">
+</head>
+<body>
+
+<div class="form-container">
+  <form id="addressForm">
+    <h2>Contact Details</h2>
+
+    <div class="form-group">
+      <label for="name">Name*</label>
+      <input type="text" id="name" required>
+      <span class="mandatory-text">This is a mandatory field</span>
+    </div>
+
+    <div class="form-group">
+      <label for="mobile">Mobile No*</label>
+      <input type="tel" id="mobile" required>
+    </div>
+
+    <h2>Address</h2>
+
+    <div class="form-group">
+      <label for="pincode">Pin Code*</label>
+      <input type="text" id="pincode" required>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address (House No, Building, Street, Area)*</label>
+      <input type="text" id="address" required>
+      <span class="note-text">*Please update flat/house no and society/apartment details</span>
+    </div>
+
+    <div class="form-group">
+      <label for="locality">Locality / Town*</label>
+      <input type="text" id="locality" required>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="city">City / District*</label>
+        <input type="text" id="city" required>
+      </div>
+      <div class="form-group">
+        <label for="state">State*</label>
+        <input type="text" id="state" required>
+      </div>
+    </div>
+
+    <h2>Address Type</h2>
+
+    <div class="radio-group">
+      <label><input type="radio" name="addressType" checked> Home</label>
+      <label><input type="radio" name="addressType"> Office</label>
+    </div>
+
+    <div class="checkbox-group">
+      <input type="checkbox" id="defaultAddress">
+      <label for="defaultAddress">Make this as my default address</label>
+    </div>
+
+    <div class="button-group">
+      <button type="reset" class="btn cancel-btn">Cancel</button>
+      <button type="submit" class="btn save-btn">Save</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById("addressForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // prevent actual form submission
+    window.location.href = "payment.html"; // redirect to fake payment gateway
+  });
+</script>
+
+</body>
+</html>
