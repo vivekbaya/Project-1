@@ -1,4 +1,4 @@
-# Myntra Clone
+# Fashion E-Commerece Website
 
 A simple Myntra e-commerce website clone built using **HTML**, **CSS**, **JavaScript**, **LocalStorage**, and **EmailJS**.
 
